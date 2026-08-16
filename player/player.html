@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Player</title>
+    <link rel="stylesheet" href="player.css" />
+  </head>
+
+  <body class="light">
+    <div class="player-container">
+      <h1 class="player-title">Choose Your Profile</h1>
+
+      <div class="profile-card-container">
+        <!-- Andrew -->
+        <div class="profile-card" onclick="selectPlayer('Andrew')">
+          <div class="profile-icon">
+            <img src="panda.png" alt="Panda Icon" />
+          </div>
+          <h3 class="profile-name">Andrew</h3>
+        </div>
+
+        <!-- Minh Anh -->
+        <div class="profile-card" onclick="selectPlayer('Minh Anh')">
+          <div class="profile-icon">
+            <img src="chicken.png" alt="Chicken Icon" />
+          </div>
+          <h3 class="profile-name">Minh Anh</h3>
+        </div>
+      </div>
+
+      <p class="player-note">Select your profile to enter your shared space.</p>
+    </div>
+
+    <script>
+      function selectPlayer(name) {
+        localStorage.setItem("wordle_player", name);
+        window.location.href = "../index.html"; // go to homepage
+      }
+    </script>
+  </body>
+</html>

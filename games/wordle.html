@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Daily Wordle</title>
+    <link rel="stylesheet" href="wordle.css" />
+    <script src="words.js"></script>
+    <script src="dailyWord.js"></script>
+  </head>
+
+  <body class="light">
+    <div class="wordle-wrapper">
+      <!-- HEADER -->
+      <header class="wordle-header">
+        <h1 class="title">Daily Wordle</h1>
+        <a href="../index.html" class="back-btn">← Back to Home</a>
+        <h2 id="playerDisplay" class="player-display"></h2>
+      </header>
+
+      <!-- TOP BAR -->
+      <div class="top-bar">
+        <button id="themeToggle" class="theme-btn">Toggle Dark Mode</button>
+      </div>
+
+      <!-- GAME AREA -->
+      <main class="wordle-main">
+        <div id="board" class="board"></div>
+        <div id="keyboard" class="keyboard"></div>
+        <div id="message" class="message"></div>
+      </main>
+
+      <!-- CONFETTI -->
+      <canvas id="confettiCanvas"></canvas>
+
+      <!-- RESULTS MODAL -->
+      <div id="resultsModal" class="results-modal">
+        <div class="results-content">
+          <h2 class="results-title">Daily Results</h2>
+          <div id="resultsText" class="results-text"></div>
+          <button class="results-close" onclick="closeResults()">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="wordle.js"></script>
+  </body>
+</html>

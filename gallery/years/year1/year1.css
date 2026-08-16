@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: #dfe8d6;
+  color: #2f3e2c;
+}
+
+/* Ambient background */
+.ambient-bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, #e8f2e2, transparent 60%),
+    radial-gradient(circle at 80% 70%, #f0f7ec, transparent 60%);
+  animation: ambientMove 12s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes ambientMove {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(20px, -20px);
+    opacity: 1;
+  }
+}
+
+.year-container {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Story sections */
+.story-section {
+  margin-bottom: 60px;
+  padding: 20px;
+  background: #e6e8df;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGE FIX — FULL IMAGE VISIBLE */
+.image-wrapper {
+  width: 100%;
+  max-height: 450px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.story-img {
+  max-width: 100%;
+  max-height: 450px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* Glow */
+.glow {
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.85);
+}
+
+/* MUSIC SECTION */
+.music-section {
+  margin-top: 80px;
+}
+
+/* ALL SONGS ON ONE LINE */
+.music-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 30px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+}
+
+.spotify-card {
+  width: 350px;
+  flex: 0 0 auto;
+}
+
+.disc-card {
+  background: #dcded3;
+  padding: 20px;
+  border-radius: 14px;
+  width: 180px;
+  flex: 0 0 auto;
+  cursor: pointer;
+}
+
+.disc-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.back-btn {
+  margin-top: 40px;
+  padding: 10px 18px;
+  background: #6aaa64;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+/* Animations */
+.animate-fade {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.animate-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Hover animation for songs */
+.song-hover {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.song-hover:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+}

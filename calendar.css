@@ -1,0 +1,248 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  transition:
+    background 0.3s,
+    color 0.3s;
+  text-align: center;
+}
+
+body.light {
+  background: #dfe8d6;
+  color: #2f3e2c;
+}
+
+body.dark {
+  background: #1f2a1f;
+  color: #e8f5e1;
+}
+
+.title {
+  margin-top: 20px;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: #9fb59a;
+  color: #2f3e2c;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+/* SEARCH BAR */
+.search-bar {
+  width: 90%;
+  max-width: 700px;
+  padding: 12px;
+  margin: 20px auto;
+  border-radius: 10px;
+  border: 2px solid #9fb59a;
+  font-size: 1rem;
+}
+
+/* WEEKLY VIEW */
+.week-btn {
+  padding: 10px 20px;
+  background: #6aaa64;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 10px auto;
+  display: block;
+}
+
+.week-view {
+  display: none;
+  width: 90%;
+  max-width: 700px;
+  margin: 20px auto;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.week-day {
+  background: #f4f7f2;
+  border: 2px solid #9fb59a;
+  border-radius: 10px;
+  padding: 10px;
+  min-height: 120px;
+  text-align: left;
+}
+
+.week-day-title {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+/* WRAPPER */
+.calendar-wrapper {
+  width: 90%;
+  max-width: 700px;
+  margin: 30px auto;
+}
+
+/* MONTH HEADER */
+.month-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-btn {
+  background: #b7c8b2;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* GRID */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  margin-top: 20px;
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.calendar-grid.fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.calendar-grid.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.day-cell {
+  background: #f4f7f2;
+  border: 2px solid #9fb59a;
+  border-radius: 10px;
+  padding: 10px;
+  min-height: 90px;
+  text-align: left;
+  position: relative;
+}
+
+.day-cell.drag-over {
+  background: #d0e0cd;
+}
+
+.day-number {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.event-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.event-dot.dragging {
+  transform: scale(1.4);
+  opacity: 0.7;
+}
+
+/* SIDEBAR */
+.event-sidebar {
+  background: #f4f7f2;
+  border: 2px solid #9fb59a;
+  border-radius: 12px;
+  width: 300px;
+  padding: 20px;
+  margin: 30px auto;
+}
+
+.event-sidebar input,
+.event-sidebar select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #9fb59a;
+}
+
+#saveEvent {
+  padding: 10px 20px;
+  background: #6aaa64;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* EVENT LIST */
+.event-item {
+  background: #ffffff;
+  border-radius: 10px;
+  border: 2px solid #9fb59a;
+  padding: 12px;
+  margin: 10px 0;
+  text-align: left;
+}
+
+.delete-btn {
+  background: #c94f4f;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  background: #b63f3f;
+  transform: scale(1.05);
+}
+
+/* POPUP */
+.event-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f4f7f2;
+  border: 2px solid #6aaa64;
+  border-radius: 12px;
+  padding: 20px;
+  width: 300px;
+  display: none;
+  animation: popupIn 0.3s ease;
+}
+
+.popup-close {
+  background: #c94f4f;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  float: right;
+}
+
+@keyframes popupIn {
+  0% {
+    transform: translate(-50%, -60%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}

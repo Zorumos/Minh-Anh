@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  background: #dfe8d6;
+  color: #2f3e2c;
+}
+
+.player-container {
+  padding-top: 60px;
+}
+
+.player-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.profile-card-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.profile-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  width: 170px;
+  cursor: pointer;
+  text-align: center;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.profile-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.profile-icon img {
+  width: 90px;
+  height: 90px;
+}
+
+.profile-name {
+  margin-top: 12px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.player-note {
+  margin-top: 20px;
+  font-size: 1rem;
+  opacity: 0.8;
+}

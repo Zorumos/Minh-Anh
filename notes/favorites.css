@@ -1,0 +1,89 @@
+/* BASE */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+/* LIGHT MODE */
+body.light {
+  background: #dfe8d6;
+  color: #2f3e2c;
+}
+
+/* DARK MODE */
+body.dark {
+  background: #121a12;
+  color: #e8f5e1;
+}
+
+/* HEADER */
+.title {
+  margin-top: 20px;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: #9fb59a;
+  color: #2f3e2c;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+body.dark .back-btn {
+  background: #3a4a3a;
+  color: #e8f5e1;
+}
+
+/* FAVORITES GRID */
+.fav-grid {
+  width: 90%;
+  max-width: 700px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+/* FAVORITE CARD */
+.fav-card {
+  background: #f4f7f2;
+  border: 2px solid #6aaa64;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;
+  animation: fadeIn 0.4s ease;
+}
+
+body.dark .fav-card {
+  background: #1f2a1f;
+  border-color: #6aaa64;
+  color: #e8f5e1;
+}
+
+/* TAG */
+.tag {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #6aaa64;
+  color: white;
+  margin-top: 10px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

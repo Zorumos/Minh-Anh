@@ -1,0 +1,82 @@
+/* FULLSCREEN BACKGROUND */
+.farm-bg {
+  position: fixed;
+  inset: 0;
+  background: url("media/pick.gif") center/cover no-repeat;
+  z-index: -1;
+}
+
+/* OVERLAY */
+.farm-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* raise content */
+  padding-top: 120px; /* move title higher */
+  padding-left: 80px; /* left‑side layout */
+}
+
+/* TITLE — Valorant style */
+.farm-title {
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 40px;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* OPTIONS */
+.farm-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* BUTTONS — Valorant style */
+.farm-option {
+  width: 260px;
+  padding: 18px 24px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.85);
+  background: transparent;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.25s ease;
+}
+
+.farm-option:hover {
+  border-color: #ff4655;
+  color: #ff4655;
+  transform: translateX(10px);
+}
+
+/* BACK BUTTON */
+.farm-back {
+  margin-top: 40px;
+  width: 200px;
+  padding: 14px 20px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.75);
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: 0.25s ease;
+}
+
+.farm-back:hover {
+  border-color: #ff4655;
+  color: #ff4655;
+  transform: translateX(8px);
+}

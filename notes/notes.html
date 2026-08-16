@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>100 Notes</title>
+    <link rel="stylesheet" href="notes.css" />
+  </head>
+
+  <body class="light">
+    <h1 class="title">100 Notes</h1>
+
+    <!-- Compact Progress Bar -->
+    <div class="progress-bar">
+      <div id="progressFill" class="progress-fill"></div>
+    </div>
+    <p id="progressText" class="progress-text">0 / 100 read</p>
+
+    <a href="../index.html" class="back-btn">Back to Home</a>
+    <a href="favorites.html" class="fav-page-btn">Favorite Notes</a>
+
+    <div class="top-bar">
+      <button id="themeToggle" class="theme-btn">Toggle Dark Mode</button>
+      <button id="resetBtn" class="reset-btn">Reset Dimmed</button>
+      <button id="undoBtn" class="undo-btn">Undo Reset</button>
+    </div>
+
+    <!-- LAST CLICKED NOTE -->
+    <div
+      id="lastClickedCard"
+      class="highlight-card"
+      style="display: none"
+    ></div>
+
+    <!-- NUMBER GRID -->
+    <div id="notesGrid" class="grid"></div>
+
+    <!-- MODAL -->
+    <div id="noteModal" class="modal">
+      <div class="modal-content">
+        <button id="closeModal" class="close-btn">X</button>
+
+        <h2 id="modalNumber"></h2>
+
+        <textarea id="modalEdit" class="edit-box"></textarea>
+
+        <button id="favoriteBtn" class="fav-btn">❤️</button>
+
+        <button id="saveEditBtn" class="save-btn">Save</button>
+      </div>
+    </div>
+
+    <script src="notes.js"></script>
+  </body>
+</html>

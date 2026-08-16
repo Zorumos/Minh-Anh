@@ -1,0 +1,162 @@
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+body.light {
+  background: #dfe8d6; /* sage green */
+  color: #2f3e2c;
+}
+
+body.dark {
+  background: #121a12;
+  color: #e8f5e1;
+}
+
+/* AMBIENT BACKGROUND */
+.ambient-bg {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, #e8f2e2, transparent 60%),
+    radial-gradient(circle at 80% 70%, #f0f7ec, transparent 60%);
+  animation: ambientMove 12s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes ambientMove {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(20px, -20px);
+    opacity: 1;
+  }
+}
+
+/* WRAPPER */
+.home-wrapper {
+  max-width: 600px;
+  margin: auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* HEADER */
+.home-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* MAIN COLUMN */
+.home-main {
+  display: flex;
+  justify-content: center;
+}
+
+.button-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+/* BUTTONS */
+.home-btn {
+  display: block;
+  padding: 14px;
+  background: #9fb59a;
+  color: #2f3e2c;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition:
+    transform 0.15s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.home-btn:hover {
+  transform: scale(1.05);
+  background: #8aa487;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+body.dark .home-btn {
+  background: #3a4a3a;
+  color: #e8f5e1;
+}
+
+body.dark .home-btn:hover {
+  background: #2f3e2f;
+}
+
+/* FOOTER */
+.home-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.theme-btn {
+  padding: 12px 20px;
+  background: #6aaa64;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition:
+    transform 0.15s ease,
+    background 0.2s ease;
+}
+
+.theme-btn:hover {
+  transform: scale(1.05);
+  background: #5b9957;
+}
+
+/* ANIMATIONS */
+.animate-fade {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+.animate-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 1s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

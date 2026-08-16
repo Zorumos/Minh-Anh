@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pick Your Farm</title>
+    <link rel="stylesheet" href="farm.css" />
+  </head>
+
+  <body>
+    <div class="farm-bg"></div>
+
+    <div class="farm-overlay">
+      <h1 class="farm-title">Pick Your Farm</h1>
+
+      <div class="farm-options">
+        <button class="farm-option" onclick="selectFarm('Andrew')">
+          Andrew's
+        </button>
+        <button class="farm-option" onclick="selectFarm('Minh Anh')">
+          Minh Anh's
+        </button>
+
+        <button class="farm-back" onclick="goBackHome()">← Back to Home</button>
+      </div>
+    </div>
+
+    <script src="farm.js"></script>
+  </body>
+</html>

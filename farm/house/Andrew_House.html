@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Andrew's House</title>
+    <link rel="stylesheet" href="Andrew_House.css" />
+  </head>
+
+  <body>
+    <div class="house-bg"></div>
+
+    <div class="house-overlay">
+      <!-- PLAY MUSIC BUTTON -->
+      <button class="music-btn" onclick="toggleMusic()">🎵 Play Music</button>
+
+      <!-- MUSIC PLAYER (hidden until clicked) -->
+      <div id="musicPlayer" class="music-player">
+        <iframe
+          style="border-radius: 12px"
+          src="https://open.spotify.com/embed/playlist/3UXKVWddIFmtRU7ZtgzoZb?utm_source=generator"
+          width="100%"
+          height="380"
+          frameborder="0"
+          allow="
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            fullscreen;
+            picture-in-picture;
+          "
+          loading="lazy"
+        >
+        </iframe>
+      </div>
+
+      <!-- BUTTONS -->
+      <div class="house-buttons">
+        <button class="house-btn" onclick="goOutside()">Go Outside</button>
+        <button class="house-btn home-btn" onclick="goHome()">
+          Back to Home
+        </button>
+      </div>
+    </div>
+
+    <script src="Andrew_House.js"></script>
+  </body>
+</html>

@@ -1,0 +1,98 @@
+/* BACKGROUND */
+.house-bg {
+  position: fixed;
+  inset: 0;
+  background: url("../media/inside_house.gif") center/cover no-repeat;
+  z-index: -1;
+}
+
+/* OVERLAY */
+.house-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 40px;
+  padding-left: 40px;
+}
+
+/* MUSIC BUTTON */
+.music-btn {
+  width: 140px;
+  padding: 10px 14px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #fff;
+  background: rgba(255, 200, 0, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: 0.25s ease;
+}
+
+.music-btn:hover {
+  background: rgba(255, 220, 60, 1);
+  transform: scale(1.05);
+}
+
+/* MUSIC PLAYER */
+.music-player {
+  width: 380px;
+  margin-top: 20px;
+  display: none;
+  animation: fadeIn 0.5s ease forwards;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* BUTTON CONTAINER */
+.house-buttons {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* BUTTONS */
+.house-btn {
+  width: 260px;
+  padding: 18px 24px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-align: left;
+  color: #ffffff;
+  background: rgba(255, 80, 80, 0.85);
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.25s ease;
+}
+
+.house-btn:hover {
+  background: rgba(255, 120, 120, 1);
+  transform: translateX(10px);
+}
+
+.home-btn {
+  background: rgba(80, 150, 255, 0.85);
+}
+
+.home-btn:hover {
+  background: rgba(120, 180, 255, 1);
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
