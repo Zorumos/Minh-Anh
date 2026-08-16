@@ -1,84 +1,58 @@
-document.body.style.opacity = "0";
-document.body.style.transition = "opacity 0.6s ease";
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Games</title>
+    <link rel="stylesheet" href="index.css" />
 
-window.onload = () => {
-  document.body.style.opacity = "1";
+    <!-- GATEKEEPER REDIRECT -->
+    <script>
+      if (!localStorage.getItem("wordle_player")) {
+        window.location.href = "player/player.html";
+      }
+    </script>
+  </head>
 
-  // Load saved theme
-  const saved = localStorage.getItem("theme");
-  if (saved) document.body.className = saved;
-};
+  <body class="light">
+    <div class="ambient-bg"></div>
 
-function toggleTheme() {
-  const current = document.body.classList.contains("dark") ? "dark" : "light";
-  const next = current === "light" ? "dark" : "light";
+    <div class="home-wrapper">
+      <!-- HEADER -->
+      <div class="home-header animate-fade">
+        <h1 class="title">Games</h1>
+        <p class="subtitle">Choose what you want to explore</p>
+      </div>
 
-  document.body.className = next;
-  localStorage.setItem("theme", next);
-}
-function goToFarm() {
-  // Create overlay
-  const overlay = document.createElement("div");
-  overlay.style.position = "fixed";
-  overlay.style.inset = "0";
-  overlay.style.background = "rgba(0,0,0,0)";
-  overlay.style.display = "flex";
-  overlay.style.flexDirection = "column";
-  overlay.style.alignItems = "center";
-  overlay.style.justifyContent = "center";
-  overlay.style.zIndex = "99999";
-  overlay.style.transition = "background 0.6s ease";
+      <!-- MAIN BUTTON COLUMN -->
+      <div class="home-main animate-up">
+        <div class="button-column">
+          <a class="home-btn" href="games/wordle.html">Daily Wordle</a>
+          <a class="home-btn" href="games/history/stats.html">Wordle Stats</a>
+          <a class="home-btn" href="games/history/compare.html"
+            >Wordle Compare</a
+          >
+          <a class="home-btn" href="games/history/achievements.html"
+            >Wordle Achievements</a
+          >
 
-  document.body.appendChild(overlay);
+          <a class="home-btn" href="notes/notes.html">100 Notes</a>
+          <a class="home-btn" href="calendar.html">Shared Calendar</a>
+          <a class="home-btn" href="gallery/portfolio.html"
+            >Digital Photo Book</a
+          >
 
-  // Fade to black
-  setTimeout(() => {
-    overlay.style.background = "rgba(0,0,0,1)";
-  }, 20);
+          <a class="home-btn" onclick="goToFarm()">Farm</a>
+        </div>
+      </div>
 
-  // Fullscreen GIF
-  const img = document.createElement("img");
-  img.src = "farm/media/loading screen.gif";
-  img.style.width = "100%";
-  img.style.height = "100%";
-  img.style.objectFit = "cover"; // FULLSCREEN, NO SHRINK
-  img.style.opacity = "0";
-  img.style.transition = "opacity 0.8s ease";
+      <!-- FOOTER -->
+      <div class="home-footer animate-fade">
+        <button class="theme-btn" onclick="toggleTheme()">
+          Toggle Dark Mode
+        </button>
+      </div>
+    </div>
 
-  overlay.appendChild(img);
-
-  // Progress bar container
-  const barContainer = document.createElement("div");
-  barContainer.style.width = "60%";
-  barContainer.style.maxWidth = "400px";
-  barContainer.style.height = "14px";
-  barContainer.style.borderRadius = "10px";
-  barContainer.style.background = "#333";
-  barContainer.style.marginTop = "20px";
-  barContainer.style.overflow = "hidden";
-  barContainer.style.opacity = "0";
-  barContainer.style.transition = "opacity 0.8s ease";
-
-  overlay.appendChild(barContainer);
-
-  // Progress bar fill
-  const barFill = document.createElement("div");
-  barFill.style.height = "100%";
-  barFill.style.width = "0%";
-  barFill.style.background = "#6aaa64";
-  barFill.style.transition = "width 1.8s ease";
-
-  barContainer.appendChild(barFill);
-
-  // Animate GIF + progress bar after fade
-  setTimeout(() => {
-    img.style.opacity = "1";
-    barContainer.style.opacity = "1";
-    barFill.style.width = "100%";
-  }, 600);
-
-  // Redirect after animation
-  setTimeout(() => {
-    window.location.href = "farm/farm.html";
-  }, 2600);
-}
+    <script src="index.js"></script>
+  </body>
+</html>
