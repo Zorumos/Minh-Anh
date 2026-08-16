@@ -32,7 +32,10 @@
 
     <script>
       function selectPlayer(name) {
+        // Save selected player
         localStorage.setItem("wordle_player", name);
+
+        // Go back to main Games page
         window.location.href = "../index.html";
       }
     </script>
