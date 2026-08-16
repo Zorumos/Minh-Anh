@@ -12,7 +12,6 @@
       <h1 class="player-title">Choose Your Profile</h1>
 
       <div class="profile-card-container">
-        <!-- Andrew -->
         <div class="profile-card" onclick="selectPlayer('Andrew')">
           <div class="profile-icon">
             <img src="panda.png" alt="Panda Icon" />
@@ -20,7 +19,6 @@
           <h3 class="profile-name">Andrew</h3>
         </div>
 
-        <!-- Minh Anh -->
         <div class="profile-card" onclick="selectPlayer('Minh Anh')">
           <div class="profile-icon">
             <img src="chicken.png" alt="Chicken Icon" />
@@ -35,7 +33,7 @@
     <script>
       function selectPlayer(name) {
         localStorage.setItem("wordle_player", name);
-        window.location.href = "../index.html"; // go to homepage
+        window.location.href = "../index.html";
       }
     </script>
   </body>
