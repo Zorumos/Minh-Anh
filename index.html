@@ -1,13 +1,20 @@
-<script>
-  window.location.href = "player/player.html";
-</script>
-
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Games</title>
     <link rel="stylesheet" href="index.css" />
+
+    <!-- GATEKEEPER REDIRECT -->
+    <script>
+      // Run after DOM is ready to avoid weird timing issues
+      document.addEventListener("DOMContentLoaded", () => {
+        const player = localStorage.getItem("wordle_player");
+        if (!player) {
+          window.location.href = "player/player.html";
+        }
+      });
+    </script>
   </head>
 
   <body class="light">
@@ -23,10 +30,7 @@
       <!-- MAIN BUTTON COLUMN -->
       <div class="home-main animate-up">
         <div class="button-column">
-          <!-- DAILY WORDLE -->
           <a class="home-btn" href="games/wordle.html">Daily Wordle</a>
-
-          <!-- WORDLE SECTION -->
           <a class="home-btn" href="games/history/stats.html">Wordle Stats</a>
           <a class="home-btn" href="games/history/compare.html"
             >Wordle Compare</a
@@ -35,18 +39,12 @@
             >Wordle Achievements</a
           >
 
-          <!-- 100 NOTES -->
           <a class="home-btn" href="notes/notes.html">100 Notes</a>
-
-          <!-- SHARED CALENDAR -->
           <a class="home-btn" href="calendar.html">Shared Calendar</a>
-
-          <!-- DIGITAL PHOTO BOOK -->
           <a class="home-btn" href="gallery/portfolio.html"
             >Digital Photo Book</a
           >
 
-          <!-- FARM (NEW LAST ITEM) -->
           <a class="home-btn" onclick="goToFarm()">Farm</a>
         </div>
       </div>
